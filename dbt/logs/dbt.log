@@ -1,0 +1,33 @@
+[0m18:26:33.042484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1AA4C0650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1A9D7BCB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1A9D789B0>]}
+
+
+============================== 18:26:33.051975 | 45980c73-287b-473b-a3eb-9374ce4a5f62 ==============================
+[0m18:26:33.051975 [info ] [MainThread]: Running with dbt=1.11.0-rc2
+[0m18:26:33.051975 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'no_print': 'None', 'use_colors': 'True', 'profiles_dir': 'C:\\Users\\MrKillShOtzz\\.dbt', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'empty': 'None', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'invocation_command': 'dbt init netflix-movie-analysis', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m18:26:33.138960 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\MrKillShOtzz\.dbt
+[0m18:26:56.768784 [debug] [MainThread]: Starter project path: C:\Users\MrKillShOtzz\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m18:26:56.859014 [info ] [MainThread]: 
+Your new dbt project "netflix_movie_analysis" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:26:56.865790 [info ] [MainThread]: Setting up your profile.
+[0m18:27:01.639995 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m18:27:01.648235 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m18:27:01.648235 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m18:28:59.749439 [info ] [MainThread]: Profile netflix_movie_analysis written to C:\Users\MrKillShOtzz\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:28:59.759193 [debug] [MainThread]: Command `dbt init` succeeded at 18:28:59.759193 after 147.03 seconds
+[0m18:28:59.761073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1AA03B440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1AB8F3FB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1AC0B64B0>]}
+[0m18:28:59.762219 [debug] [MainThread]: Flushing usage events
+[0m18:29:04.507528 [debug] [MainThread]: An error was encountered while trying to flush usage events

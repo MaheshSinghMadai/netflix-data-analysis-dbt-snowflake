@@ -1,0 +1,88 @@
+-- Create movies table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_movies (
+    movieId INTEGER,
+    title STRING,
+    genres STRING  
+)
+
+COPY INTO raw_movies 
+FROM '@NETFLIX_STAGE/movies.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+
+select * from raw_movies
+
+
+-- Create tags table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_tags (
+    userId INTEGER,
+    movieId INTEGER,
+    tag STRING,
+    timestamp BIGINT
+)
+
+COPY INTO raw_tags
+FROM '@NETFLIX_STAGE/tags.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+ON_ERROR = CONTINUE
+
+select * from raw_tags
+
+
+-- Create ratings table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_ratings (
+    userId INTEGER,
+    movieId INTEGER,
+    rating DECIMAL,
+    timestamp BIGINT
+)
+
+COPY INTO raw_ratings
+FROM '@NETFLIX_STAGE/ratings.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+ON_ERROR = CONTINUE
+
+select * from raw_ratings
+
+
+-- Create links table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_links (
+    movieId	INTEGER, 
+    imdbId BIGINT,
+    tmdbId INTEGER
+)
+
+COPY INTO raw_links
+FROM '@NETFLIX_STAGE/links.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+ON_ERROR = CONTINUE
+
+select * from raw_links
+
+
+-- Create genome scores table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_genome_scores (
+    movieId INTEGER,
+    tagId INTEGER,
+    relevance DECIMAL
+)
+
+COPY INTO raw_genome_scores
+FROM '@NETFLIX_STAGE/genome-scores.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+ON_ERROR = CONTINUE
+
+select * from raw_genome_scores
+
+
+-- Create genome tags table and copy data from S3 bucket----
+CREATE OR REPLACE TABLE raw_genome_tags (
+  tagId INTEGER,
+  tag STRING
+)
+
+COPY INTO raw_genome_tags
+FROM '@NETFLIX_STAGE/genome-tags.csv'
+FILE_FORMAT = (TYPE = 'csv' SKIP_HEADER = 1 FIELD_OPTIONALLY_ENCLOSED_BY = '"' )
+ON_ERROR = CONTINUE
+
+select * from raw_genome_tags
