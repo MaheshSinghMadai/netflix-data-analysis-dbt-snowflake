@@ -1,5 +1,5 @@
 with ratings as (
-    Select distinct user_id from {{ ref("src_movies")}}
+    Select distinct user_id from {{ ref("src_ratings")}}
 ),
 
 tags as (
