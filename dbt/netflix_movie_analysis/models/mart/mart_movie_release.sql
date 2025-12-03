@@ -10,9 +10,9 @@ seed_dates as (
 select 
     r.*,
     CASE 
-        WHEN d.release_date IS NULL THEN 'unknown'
+        WHEN s.release_date IS NULL THEN 'unknown'
         ELSE 'known'
     END as release_date_available  
 from fct_ratings r
 LEFT JOIN seed_dates s
-ON f.movie_id = d.movie_id
+ON r.movie_id = s.movie_id

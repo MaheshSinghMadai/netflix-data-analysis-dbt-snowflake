@@ -20,5 +20,5 @@ where rating is not null
 
 -- get new timestamp after addition of new data into the table
 {% if is_incremental() %}
-    AND rating_timestamp > (SELECT MAX(rating_timestamp)) from {{ this}}
+    AND rating_timestamp > (SELECT MAX(rating_timestamp) from {{ this}})
 {% endif %}
